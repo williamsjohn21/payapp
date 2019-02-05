@@ -16,7 +16,7 @@ const paystack = (request) => {
             },
             form
         }
-        const callback = (error, response, body)=>{
+        const callback = (error, response, body) => {
 
             return mycallback(error, body);
 
@@ -31,4 +31,3 @@ const paystack = (request) => {
 
     }
     return {initializePayment, verifyPayment};
-}
