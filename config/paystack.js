@@ -4,4 +4,6 @@ const paystack = (request) => {
     const initializePayment = (form, mycallback) =>{
 
     }
-    
+    const verifyPayment = (ref,mycallback) => {
+
+    }
