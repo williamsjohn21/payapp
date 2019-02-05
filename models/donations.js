@@ -21,4 +21,11 @@ const donorSchema = new mongoose.Schema({
         required: true,
 
     },
+    reference: {
+
+        type: String,
+
+        required: true
+
+    }
 }
