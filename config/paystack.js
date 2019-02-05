@@ -14,6 +14,17 @@ const paystack = (request) => {
                 'cache-control': 'no-cache'
 
             },
+            form
+        }
+        const callback = (error, response, body)=>{
+
+            return mycallback(error, body);
+
+        }
+
+        request.post(options,callback);
+
+    }
 
     }
     const verifyPayment = (ref, mycallback) => {
