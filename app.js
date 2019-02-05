@@ -10,7 +10,7 @@ const _ = require('lodash');
 
 const path = require('path');
 
-const {Donor} = require('./models/donor');
+const {Donor} = require('./models/donations');
 
 const {initializePayment, verifyPayment} = require('./config/paystack')(request);
 
