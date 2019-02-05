@@ -31,3 +31,9 @@ app.get('/',(req, res) => {
 res.render('index.pug');
 
 });
+
+app.listen(port, () => {
+
+    console.log(`App running on port ${port}`)
+
+});
