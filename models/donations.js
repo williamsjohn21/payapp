@@ -7,5 +7,11 @@ const donorSchema = new mongoose.Schema({
         required: true,
 
     },
-    
+    email: {
+
+        type: String,
+
+        required: true,
+
+    },
 }
