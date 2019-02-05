@@ -10,7 +10,7 @@ const _ = require('lodash');
 
 const path = require('path');
 
-const {Donor} = require('./models/donor')
+const {Donor} = require('./models/donor');
 
 const {initializePayment, verifyPayment} = require('./config/paystack')(request);
 
@@ -73,9 +73,9 @@ app.get('/paystack/callback', (req,res) => {
 
     const ref = req.query.reference;
 
-    verifyPayment(ref, (error,body)=>{
+    verifyPayment(ref, (error, body) => {
 
-        if(error){
+        if (error) {
 
             //handle errors appropriately
 
@@ -87,7 +87,8 @@ app.get('/paystack/callback', (req,res) => {
 
         response = JSON.parse(body);
 
-        const data = _.at(response.data, ['reference', 'amount','customer.email', 'metadata.full_name']);
+
+        const data = _.at(response.data, ['reference', 'amount', 'customer.email', 'metadata.full_name']);
 
         [reference, amount, email, full_name] = data;
 
@@ -95,20 +96,20 @@ app.get('/paystack/callback', (req,res) => {
 
         const donor = new Donor(newDonor)
 
-        donor.save().then((donor)=>{
+        donor.save().then((donor) => {
 
-            if (donor){
+            if (donor) {
 
-                res.redirect('/receipt/'+donor._id);
+                res.redirect('/receipt/' + donor._id);
 
             }
 
-        }).catch((e)=>{
+        }).catch((e) => {
 
             res.redirect('/error');
 
         })
 
-    })
+    });
 
 });
