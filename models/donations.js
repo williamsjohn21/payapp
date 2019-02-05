@@ -14,4 +14,11 @@ const donorSchema = new mongoose.Schema({
         required: true,
 
     },
+    amount: {
+
+        type: Number,
+
+        required: true,
+
+    },
 }
